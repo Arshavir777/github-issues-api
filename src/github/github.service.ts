@@ -45,6 +45,13 @@ export class GithubService {
         throw new NotFoundException();
       }
 
+      if (error?.response?.statusText.includes('rate limit')) {
+        throw new HttpException(
+          'Too Many Requests',
+          HttpStatus.TOO_MANY_REQUESTS,
+        );
+      }
+
       throw new HttpException(
         `Failed to fetch issues from ${username}/${repository}`,
         HttpStatus.BAD_REQUEST,
