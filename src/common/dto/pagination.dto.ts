@@ -1,21 +1,21 @@
 import { ApiProperty } from '@nestjs/swagger';
 
 export class PaginationDto {
-    @ApiProperty()
-    totalItems: number;
+  @ApiProperty()
+  totalItems: number;
 
-    @ApiProperty()
-    currentPage: number;
+  @ApiProperty()
+  currentPage: number;
 
-    @ApiProperty()
-    pageSize: number;
+  @ApiProperty()
+  pageSize: number;
 
-    @ApiProperty()
-    totalPages: number;
+  @ApiProperty()
+  totalPages: number;
 
-    @ApiProperty()
-    hasNextPage: boolean;
+  @ApiProperty()
+  hasNextPage: boolean;
 
-    @ApiProperty()
-    hasPrevPage: boolean;
+  @ApiProperty()
+  hasPrevPage: boolean;
 }

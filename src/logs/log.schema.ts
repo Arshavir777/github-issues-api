@@ -1,13 +1,13 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Prop, SchemaFactory, Schema } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
-import { Document } from 'mongoose';
 
 export enum LogAction {
   GET_ISSUES = 'get_issues',
-  GET_SINGLE_ISSUE = 'get_issue'
+  GET_SINGLE_ISSUE = 'get_issue',
 }
 
-export class Log extends Document {
+@Schema()
+class Log {
   @ApiProperty()
   id: string;
 
@@ -24,7 +24,6 @@ export class Log extends Document {
   dateTime: Date;
 }
 
-
 const LogSchema = SchemaFactory.createForClass(Log);
 
 LogSchema.set('toJSON', {
@@ -34,7 +33,7 @@ LogSchema.set('toJSON', {
     ret.id = ret._id;
     delete ret._id;
     return ret;
-  }
+  },
 });
 
-export { LogSchema };
+export { Log, LogSchema };

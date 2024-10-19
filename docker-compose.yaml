@@ -15,7 +15,7 @@ services:
       - mongo
     volumes:
       - .:/usr/src/app
-      - /usr/src/app/node_modules
+    # FOR DEV
     command: npm run start:dev
 
   mongo:
