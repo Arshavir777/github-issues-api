@@ -5,7 +5,7 @@ import { Log } from '../log.schema';
 
 export class LogsResponseDto {
     @ApiProperty({ type: [Log] })
-    logs: Log[];
+    statistics: Log[];
 
     @ApiProperty({ type: PaginationDto })
     pagination: PaginationDto;

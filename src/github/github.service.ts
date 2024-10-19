@@ -25,6 +25,10 @@ export class GithubService {
             const pagination = this.calculatePagination(response.headers.link, page, per_page);
             return { issues, pagination };
         } catch (error) {
+            if (error?.response?.status === HttpStatusCode.NotFound) {
+                throw new HttpException('Not found', HttpStatusCode.NotFound)
+            }
+
             throw new HttpException(
                 `Failed to fetch issues from ${username}/${repository}`,
                 HttpStatus.BAD_REQUEST,

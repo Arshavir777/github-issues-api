@@ -29,7 +29,7 @@ export class LogsService {
             .sort({ dateTime: -1 }); // Sort by date-time, descending
 
         return {
-            logs,
+            statistics: logs,
             pagination: {
                 totalItems,
                 currentPage: page,
