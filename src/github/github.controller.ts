@@ -3,9 +3,9 @@ import { ApiTags, ApiOperation, ApiParam, ApiQuery, ApiResponse } from '@nestjs/
 import { GithubService } from './github.service';
 import { IssuesResponseDto } from './dto/issues-response.dto';
 import { GithubIssueDto } from './dto/github-issue.dto';
-import { LogsService } from 'src/logs/logs.service';
 import { Request } from 'express';
 import { LogAction } from 'src/logs/log.schema';
+import { LogsService } from 'src/logs/logs.service';
 
 @ApiTags('GitHub')
 @Controller('github')
